@@ -67,7 +67,9 @@ import za.ac.cput.model.VenueSelectAll;
  */
 public class Client {
 
-  public static void main(String[] args) throws ClassNotFoundException, InstantiationException,                 IllegalAccessException, UnsupportedLookAndFeelException  {
+  public static void main(String[] args) throws ClassNotFoundException, 
+          InstantiationException, IllegalAccessException, 
+          UnsupportedLookAndFeelException  {
     
     UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
     new Client().appInitializer();
