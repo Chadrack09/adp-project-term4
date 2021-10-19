@@ -1,28 +1,44 @@
 package za.ac.cput.model;
+
+import java.io.Serializable;
+import java.sql.Date;
+
 /**
  *
- * @author    Chadrack B. Boudzoumou
- * @email     219383847@mycput.ac.za
- * @student   219383847
- * @uni       Cape Peninsula University Of Technology
- * @since     Oct 7, 2021 | 2:06:50 AM
+ * 
+ * @author Chadrack B. Boudzoumou
+ * @author Tim Davids
+ * 
+ * @email 219383847@mycput.ac.za
+ * @email 219296219@mycput.ac.za
+ * 
+ * @student 219296219
+ * @student 219383847
+ * 
+ * @uni Cape Peninsula University Of Technology
+ * @since Oct 6, 2021 | 10:40:52 PM
  *
  */
-public class Customer {
+public class Customer implements Serializable {
 
   private int customerId;
   private String customerName;
-  private String phone;
+  private String venueName;
+  private Date venueDate;
 
-  public Customer(String customerName, String phone) {
+  public Customer() {/** empty constructor **/}
+
+  public Customer(String customerName, String venueName, Date venueDate) {
     this.customerName = customerName;
-    this.phone = phone;
+    this.venueName = venueName;
+    this.venueDate = venueDate;
   }
 
-  public Customer(int customerId, String customerName, String phone) {
+  public Customer(int customerId, String customerName, String venueName, Date venueDate) {
     this.customerId = customerId;
     this.customerName = customerName;
-    this.phone = phone;
+    this.venueName = venueName;
+    this.venueDate = venueDate;
   }
 
   public int getCustomerId() {
@@ -41,17 +57,26 @@ public class Customer {
     this.customerName = customerName;
   }
 
-  public String getPhone() {
-    return phone;
+  public String getVenueName() {
+    return venueName;
   }
 
-  public void setPhone(String phone) {
-    this.phone = phone;
+  public void setVenueName(String venueName) {
+    this.venueName = venueName;
+  }
+
+  public Date getVenueDate() {
+    return venueDate;
+  }
+
+  public void setVenueDate(Date venueDate) {
+    this.venueDate = venueDate;
   }
 
   @Override
   public String toString() {
-    return "Customer{" + "customerId=" + customerId + ", customerName=" 
-            + customerName + ", phone=" + phone + '}';
+    return "Customer{" + "customerId=" + customerId + ", customerName=" + 
+            customerName + ", venueName=" + venueName + ", venueDate=" + venueDate + '}';
   }
+  
 }
