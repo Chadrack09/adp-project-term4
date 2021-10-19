@@ -1,3 +1,10 @@
+/********************************************
+ *                                          *
+ * Copyright © 2021 - Open Source           *
+ * Cape Peninsula university Of Technology  *
+ *                                          *
+ ********************************************/
+
 package za.ac.cput.client;
 
 import java.awt.BorderLayout;
