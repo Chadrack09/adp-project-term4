@@ -16,7 +16,7 @@ Instructions to run the application:
 [Cape Peninsula University Of Technology: (CPUT)](https://www.cput.ac.za/)
 
 ```java
-Contributors: 
+Collaborators: 
 Tim Davids
 Chaadrack Boudzoumou
 
