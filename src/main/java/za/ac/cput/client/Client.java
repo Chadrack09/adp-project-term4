@@ -51,18 +51,8 @@ import za.ac.cput.model.VenueSelectAll;
 
 /**
  *
- * 
- * @author Chadrack B. Boudzoumou
- * @author Tim Davids
- * 
- * @email 219383847@mycput.ac.za
- * @email 219296219@mycput.ac.za
- * 
- * @student 219296219
- * @student 219383847
- * 
- * @uni Cape Peninsula University Of Technology
- * @since Oct 6, 2021 | 10:40:52 PM
+ * @uni         Cape Peninsula University Of Technology
+ * @since       Oct 6, 2021 | 10:40:52 PM
  *
  */
 public class Client {
@@ -72,7 +62,7 @@ public class Client {
           UnsupportedLookAndFeelException  {
     
     UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-    new Client().appInitializer();
+    new Client().APP_START.start();
   }
 
   private static final int SERVER_PORT = 2000;
@@ -102,10 +92,10 @@ public class Client {
   private static ObjectInputStream inputStream;
   private static ObjectOutputStream outputStream;
 
-  public void appInitializer() {
+  AppStart APP_START = () -> {
     connectToServer();
     setGUI();
-  }
+  };
 
   private static void connectToServer() {
     try {
@@ -820,5 +810,13 @@ public class Client {
 
       return PC_P1_PANEL1;
     }
+  }
+  
+  /**
+   * Functional Interfaces
+   */
+  @FunctionalInterface
+  private interface AppStart {
+    public void start();
   }
 }

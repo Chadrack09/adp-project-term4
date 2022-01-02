@@ -34,17 +34,8 @@ import za.ac.cput.model.VenueSelectAll;
 
 /**
  * 
- * @author      Chadrack B. Boudzoumou
- * @author      Tim Davids
- * 
- * @email       219383847@mycput.ac.za
- * @email       219296219@mycput.ac.za
- * 
- * @student     219296219
- * @student     219383847
- * 
- * @uni         Cape Peninsula University Of Technology
- * @since       Oct 6, 2021 | 10:40:52 PM
+ * @university    Cape Peninsula University Of Technology
+ * @since         Oct 6, 2021 | 10:40:52 PM
  * 
  */
 public class Server {
@@ -54,7 +45,7 @@ public class Server {
     
     server.createDBConnection();
     server.dbinitialize.dbinit();
-    server.startServer();
+    server.START_SERVER.start();
     server.receiveRequest();
   }
   public Server() {
@@ -83,7 +74,7 @@ public class Server {
    * 
    * <p>Initialize server connection on TCP Port default (2000)</p>
    */
-  public void startServer() { 
+  StartServer START_SERVER = () -> { 
     try {
       
       Socket socket = new ServerSocket(SERVER_PORT).accept();
@@ -95,7 +86,7 @@ public class Server {
     catch(IOException ex) {
       ex.printStackTrace();
     }
-  } 
+  }; 
   /**
    * 
    * <p>Receive request and send back response</p>
@@ -260,6 +251,7 @@ public class Server {
       ex.printStackTrace();
     }
   }
+  
   private class DBInit {
     
     public void dbinit() {
@@ -395,7 +387,6 @@ public class Server {
     }
   }
   
-  
   private class AdminDAO {
     public void insertToDB(Admin admin) {
       
@@ -484,6 +475,7 @@ public class Server {
       }  
     }
   }
+  
   private class UsersDao {
     
     public int insertToDB(Users u) {
@@ -590,7 +582,8 @@ public class Server {
       }
       return update;
     }
-  } 
+  }
+  
   private class VenueDao {
     public int insertToDB(Venue venue) {
       String sql = "INSERT INTO APP.venue "
@@ -685,6 +678,7 @@ public class Server {
       return update;
     }
   }
+  
   private class CustomerDao {
     
     public boolean isTableEmpty() throws SQLException {
@@ -743,5 +737,13 @@ public class Server {
       }
       return row;
     }
+  }
+  
+  /**
+   * Functional Interfaces
+   */
+  @FunctionalInterface
+  private interface StartServer {
+    public void start();
   }
 }
