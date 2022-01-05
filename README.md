@@ -1,5 +1,5 @@
 ### GUI Server/Client Application
-A Graphical User Interface (GUI) Server/Client application, built with Java Swing Framework/Library.
+A Graphical User Interface (GUI) Server/Client application, built with Java Swing Framework / Library.
 
 Instructions to run the application:
 
