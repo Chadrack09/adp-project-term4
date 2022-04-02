@@ -19,6 +19,5 @@ Instructions to run the application:
 Collaborators_
    ► Tim Davids
    ► Chaadrack Boudzoumou
-
-Copyright © 2021 - Open Source
 ```
+> © **2021** - Open Source
